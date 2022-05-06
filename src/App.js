@@ -1,16 +1,14 @@
-import "./App.css";
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import UpDown_Button from "./pages/UpDown_Button";
 
 const App = () => {
-  const [item, setItem] = useState(1);
-  const incrementItem = () => setItem(item + 1);
-  const decrementItem = () => setItem(item - 1);
   return (
-    <div className="App">
-      <h1>Hello {item}</h1>
-      <button onClick={incrementItem}>incrementItem</button>
-      <button onClick={decrementItem}>decrementItem</button>
-    </div>
+    <React.Fragment>
+      <BrowserRouter>
+        <Route path="/updown" exact component={UpDown_Button} />
+      </BrowserRouter>
+    </React.Fragment>
   );
 };
 
