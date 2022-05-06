@@ -17,8 +17,8 @@ function useInput() {
     };
     return { value, onChange };
   };
-  // const maxLen = (value) => value.length <= 10;
-  const maxLen = (value) => value.include("@");
+  const maxLen = (value) => value.length <= 10;
+  // const maxLen = (value) => value.include("@");
 
   const name = useInput("Mr.", maxLen);
   return (
@@ -64,22 +64,22 @@ const maxLen = (value) => !value.include("@");
 
 */
 
-export const useInput = (initialValue, validator) => {
-  const [value, setValue] = useState(initialValue);
-  const onChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    let willUpdate = true;
-    if (typeof validator === "function") {
-      willUpdate = validator(value);
-    }
-    if (willUpdate) {
-      setValue(value);
-    }
-  };
-  return { value, onChange };
-};
+// export const useInput = (initialValue, validator) => {
+//   const [value, setValue] = useState(initialValue);
+//   const onChange = (event) => {
+//     const {
+//       target: { value },
+//     } = event;
+//     let willUpdate = true;
+//     if (typeof validator === "function") {
+//       willUpdate = validator(value);
+//     }
+//     if (willUpdate) {
+//       setValue(value);
+//     }
+//   };
+//   return { value, onChange };
+// };
 
 /*
 
